@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>You're Booked — CoachedByArpit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --black:#0a0a0a;--off:#111111;--charcoal:#1c1c1c;
+  --white:#f5f0eb;--cream:#f0e8dc;--accent:#e8401c;
+  --gold:#c9a84c;--muted:#7a7268;--border:rgba(245,240,235,0.11);
+  --green:#2d9e6b;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);color:var(--white);
+  font-family:'DM Sans',sans-serif;line-height:1.6;
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:40px 24px 80px;
+}
+
+/* CONFIRMED BADGE */
+.confirmed-wrap{text-align:center;margin-bottom:48px;opacity:0;animation:fadeUp .6s ease forwards .1s}
+.confirmed-icon{
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(45,158,107,0.15);border:2px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;font-size:32px;
+}
+.confirmed-label{
+  font-size:11px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--green);margin-bottom:12px;
+}
+.confirmed-wrap h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(42px,8vw,80px);
+  line-height:.95;color:var(--white);margin-bottom:16px;
+}
+.confirmed-wrap h1 em{font-style:normal;color:var(--accent);display:block}
+.confirmed-wrap p{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:clamp(16px,2.5vw,20px);color:var(--cream);
+  max-width:520px;margin:0 auto;line-height:1.6;
+}
+
+/* MAIN CARD */
+.card{
+  width:100%;max-width:640px;
+  border:1px solid var(--border);
+  margin-bottom:24px;
+  opacity:0;animation:fadeUp .6s ease forwards .3s;
+}
+
+/* WHAT TO EXPECT */
+.card-header{
+  background:var(--charcoal);
+  padding:20px 28px;
+  border-bottom:1px solid var(--border);
+}
+.card-header .label{
+  font-size:11px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--accent);margin-bottom:4px;
+}
+.card-header h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;color:var(--white);letter-spacing:.5px;
+}
+
+.steps{padding:0;list-style:none}
+.step{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:24px 28px;border-bottom:1px solid var(--border);
+  transition:background .2s;
+}
+.step:last-child{border-bottom:none}
+.step:hover{background:rgba(255,255,255,.02)}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;font-size:32px;
+  color:var(--accent);line-height:1;min-width:36px;
+}
+.step-body strong{
+  display:block;font-size:15px;font-weight:600;
+  color:var(--white);margin-bottom:4px;
+}
+.step-body span{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* REMINDER CARD */
+.reminder{
+  width:100%;max-width:640px;
+  border:1px solid var(--gold);
+  padding:24px 28px;
+  opacity:0;animation:fadeUp .6s ease forwards .5s;
+  position:relative;
+}
+.reminder::before{
+  content:'IMPORTANT';position:absolute;top:-11px;left:24px;
+  background:var(--gold);color:var(--black);
+  font-size:10px;font-weight:700;letter-spacing:2.5px;padding:3px 10px;
+}
+.reminder p{font-size:14px;color:var(--cream);line-height:1.75}
+.reminder strong{color:var(--white)}
+
+/* FOOTER NOTE */
+.footer-note{
+  margin-top:40px;text-align:center;
+  opacity:0;animation:fadeUp .6s ease forwards .7s;
+}
+.footer-note p{font-size:12px;color:var(--muted)}
+.footer-note a{color:var(--accent);text-decoration:none}
+.footer-note .brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px;letter-spacing:1px;
+  color:var(--white);display:block;margin-bottom:6px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:480px){
+  .step{padding:20px 20px}
+  .card-header{padding:18px 20px}
+  .reminder{padding:20px 20px}
+}
+</style>
+
+<!-- META PIXEL CODE -->
+<!-- END META PIXEL CODE -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8CZR335"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- CONFIRMED -->
+<div class="confirmed-wrap">
+  <div class="confirmed-icon">✓</div>
+  <div class="confirmed-label">You're confirmed</div>
+  <h1>Your Call<br/><em>Is Booked.</em></h1>
+  <p>Check your email for the calendar invite. Your strategy call with Arpit is locked in — here's everything you need to know before it.</p>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<div class="card">
+  <div class="card-header">
+    <div class="label">Before the call</div>
+    <h2>What To Expect</h2>
+  </div>
+  <ul class="steps">
+    <li class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <strong>Check your email right now</strong>
+        <span>You'll have a calendar invite with the call link. Add it to your calendar so you don't miss it. Check spam if you don't see it within 5 minutes.</span>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <strong>Pull out your last blood report if you have one</strong>
+        <span>Not mandatory — but if you have a recent blood test, have it handy. We'll go through what the numbers mean for your fat loss and energy specifically.</span>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <strong>Think about your last 3 attempts</strong>
+        <span>What did you try, how long did it last, and why did it stop? This gives Arpit the context to tell you exactly where the system broke — not your willpower.</span>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <strong>Show up on time, in a quiet spot</strong>
+        <span>This is 45 minutes built entirely around you. Not a group call. Not a recorded webinar. Arpit will be fully present — come ready to be honest about where you are.</span>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <strong>You will leave with clarity — not a pitch</strong>
+        <span>By the end of the call you'll know exactly what's wrong, why it's been happening, and what the next 90 days should look like. Whether you join YPT90 or not, that clarity is yours to keep.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- REMINDER -->
+<div class="reminder">
+  <p><strong>One thing before the call —</strong> Arpit reads every intake form personally before getting on the call. The more honest your answers were, the more specific and useful this session will be. If you rushed through the form, take 2 minutes now to think about what you actually want out of this.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-note">
+  <span class="brand">CoachedByArpit</span>
+  <p>Questions? DM on Instagram <a href="https://instagram.com/lawyerwhosquats" target="_blank">@lawyerwhosquats</a></p>
+  <p style="margin-top:6px">© 2026 CoachedByArpit. All rights reserved.</p>
+</div>
+
+</body>
+</html>
