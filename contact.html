@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact – CoachedByArpit</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0a0a0a;--off:#111111;--charcoal:#1c1c1c;--dark2:#161616;--white:#f5f0eb;--cream:#f0e8dc;--accent:#e8401c;--accentw:#f5622e;--gold:#c9a84c;--muted:#7a7268;--border:rgba(245,240,235,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);text-decoration:none}
+.nav-brand span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent) !important;color:#fff !important;padding:8px 20px !important;border-radius:4px;font-weight:700 !important}
+.nav-cta:hover{background:var(--accentw) !important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-toggle span{width:22px;height:2px;background:var(--white);display:block}
+@media(max-width:768px){.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:var(--off);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.nav-toggle{display:flex}nav{padding:0 24px}}
+.page-wrap{padding-top:64px}
+.slabel{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sh2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,6vw,68px);line-height:1;color:var(--white);margin-bottom:18px}
+.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:15px;letter-spacing:.5px;padding:16px 34px;border-radius:4px;text-decoration:none;transition:background .25s,transform .2s}
+.cta:hover{background:var(--accentw);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* HERO */
+.contact-hero{background:var(--off);padding:88px 24px 64px;text-align:center}
+.contact-hero p.sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(16px,2.5vw,22px);color:var(--cream);max-width:520px;margin:0 auto;line-height:1.6}
+
+/* CONTACT CARDS */
+.contact-section{background:var(--black);padding:88px 24px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;max-width:900px;margin:0 auto 64px;border:1px solid var(--border)}
+.contact-card{background:var(--charcoal);padding:36px 28px;border-right:1px solid var(--border);transition:background .25s;text-decoration:none;display:block}
+.contact-card:last-child{border-right:none}
+.contact-card:hover{background:#202020}
+.contact-card .cc-icon{font-size:32px;margin-bottom:16px}
+.contact-card h3{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);margin-bottom:8px;letter-spacing:.5px}
+.contact-card .cc-handle{font-size:15px;color:var(--accent);font-weight:600;margin-bottom:8px}
+.contact-card p{font-size:13px;color:var(--muted);line-height:1.65}
+.contact-card .cc-arrow{font-size:12px;color:var(--muted);margin-top:16px;display:block;transition:color .2s}
+.contact-card:hover .cc-arrow{color:var(--accent)}
+
+/* BOOK CALL BOX */
+.book-box{border:1px solid var(--accent);padding:48px;max-width:700px;margin:0 auto;text-align:center;position:relative}
+.book-box::before{content:'FASTEST WAY TO REACH ME';position:absolute;top:-11px;left:32px;background:var(--accent);font-size:10px;font-weight:700;letter-spacing:2.5px;padding:4px 12px;color:#fff}
+.book-box h3{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);margin-bottom:12px}
+.book-box p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.book-trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:18px}
+.book-trust span{font-size:12px;color:var(--muted)}
+
+/* NOT FOR */
+.not-for{background:var(--off);padding:88px 24px}
+.nf-inner{max-width:700px;margin:0 auto}
+.nf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.nf-box{border:1px solid var(--border);padding:24px}
+.nf-box h4{font-family:'Bebas Neue',sans-serif;font-size:18px;margin-bottom:14px;letter-spacing:.5px}
+.nf-box.no h4{color:var(--muted)}
+.nf-box.yes h4{color:var(--accent)}
+.nf-item{font-size:13px;color:var(--muted);margin-bottom:8px;line-height:1.5;padding-left:16px;position:relative}
+.nf-item::before{position:absolute;left:0}
+.nf-box.no .nf-item::before{content:'✕';color:var(--muted)}
+.nf-box.yes .nf-item{color:var(--white)}
+.nf-box.yes .nf-item::before{content:'✓';color:var(--accent)}
+@media(max-width:560px){.nf-grid{grid-template-columns:1fr}.book-box{padding:32px 24px}}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--border);padding:48px 24px 40px;text-align:center}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--white);margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;gap:32px;margin:20px 0;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:12px;color:var(--muted);margin-top:16px}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8CZR335"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="page-wrap">
+
+<nav>
+  <a href="/index.html" class="nav-brand">Coached<span>By</span>Arpit</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/results.html">Results</a></li>
+    <li><a href="/ypt90.html">YPT90</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="nav-cta">Book Free Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="reveal">
+    <p class="slabel">Get in Touch</p>
+    <h1 class="sh2" style="font-size:clamp(42px,7vw,80px)">Let's Talk.</h1>
+    <p class="sub">For new enquiries, the fastest way to get a real answer is to book a free strategy call. For everything else — Instagram DM or email.</p>
+  </div>
+</section>
+
+<!-- CONTACT CARDS -->
+<section class="contact-section">
+  <div>
+    <div class="contact-grid reveal">
+      <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="contact-card">
+        <div class="cc-icon">📅</div>
+        <h3>Book a Call</h3>
+        <div class="cc-handle">Free Strategy Call</div>
+        <p>45 minutes. 1-on-1 with Arpit. You'll know exactly what's wrong and what to do about it — whether you join YPT90 or not.</p>
+        <span class="cc-arrow">Book on Calendly →</span>
+      </a>
+      <a href="https://instagram.com/lawyerwhosquats" target="_blank" class="contact-card">
+        <div class="cc-icon">📲</div>
+        <h3>Instagram DM</h3>
+        <div class="cc-handle">@lawyerwhosquats</div>
+        <p>For quick questions, program enquiries, or just to say hi. DMs are checked daily — this is the fastest way to get a response.</p>
+        <span class="cc-arrow">DM on Instagram →</span>
+      </a>
+      <a href="mailto:teamcoachedbyarpit@gmail.com" class="contact-card">
+        <div class="cc-icon">✉️</div>
+        <h3>Email</h3>
+        <div class="cc-handle">teamcoachedbyarpit@gmail.com</div>
+        <p>For formal enquiries, business collaborations, press, or anything that needs a detailed written response.</p>
+        <span class="cc-arrow">Send an Email →</span>
+      </a>
+    </div>
+
+    <div class="book-box reveal">
+      <h3>Ready to Start Your Transformation?</h3>
+      <p>Don't send a message asking if the program is right for you — book the call and find out in 45 minutes. It's free, it's specific to you, and you'll leave with clarity regardless of what you decide.</p>
+      <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="cta" style="font-size:16px;padding:18px 44px">Book Your Free Strategy Call →</a>
+      <div class="book-trust">
+        <span>📅 Instant booking confirmation</span>
+        <span>⏱ 45 minutes</span>
+        <span>🔒 100% confidential</span>
+        <span>✓ Zero obligation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="not-for">
+  <div class="nf-inner">
+    <div class="reveal" style="text-align:center">
+      <p class="slabel">Before you reach out</p>
+      <h2 class="sh2">Is This For You?</h2>
+    </div>
+    <div class="nf-grid reveal">
+      <div class="nf-box no">
+        <h4>Don't reach out if</h4>
+        <p class="nf-item">You want a quick fix or crash diet</p>
+        <p class="nf-item">You're not ready to act on what you learn</p>
+        <p class="nf-item">You want generic advice you can Google</p>
+        <p class="nf-item">You're looking for a WhatsApp group program</p>
+      </div>
+      <div class="nf-box yes">
+        <h4>Do reach out if</h4>
+        <p class="nf-item">You're a working parent 30–55 done restarting</p>
+        <p class="nf-item">You want science-backed protocols, not bro science</p>
+        <p class="nf-item">You're ready to invest in a real system</p>
+        <p class="nf-item">You want 1-on-1 coaching built around your life</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">CoachedByArpit</div>
+    <p style="font-size:13px;color:var(--muted)">@lawyerwhosquats · GQ India Health Featured</p>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/results.html">Results</a>
+      <a href="/ypt90.html">YPT90 Program</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank">Book Free Call</a>
+    </div>
+    <div class="footer-links" style="margin-top:0">
+      <a href="/refund-policy.html">Refund Policy</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms & Conditions</a>
+    </div>
+    <p class="footer-copy">© 2026 CoachedByArpit. All rights reserved.</p>
+  </div>
+</footer>
+</div>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.08});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
