@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>YPT90 Program – CoachedByArpit</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0a0a0a;--off:#111111;--charcoal:#1c1c1c;--dark2:#161616;--white:#f5f0eb;--cream:#f0e8dc;--accent:#e8401c;--accentw:#f5622e;--gold:#c9a84c;--muted:#7a7268;--border:rgba(245,240,235,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);text-decoration:none}
+.nav-brand span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent) !important;color:#fff !important;padding:8px 20px !important;border-radius:4px;font-weight:700 !important}
+.nav-cta:hover{background:var(--accentw) !important;color:#fff !important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-toggle span{width:22px;height:2px;background:var(--white);display:block}
+@media(max-width:768px){.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:var(--off);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.nav-toggle{display:flex}nav{padding:0 24px}}
+.page-wrap{padding-top:64px}
+section{padding:88px 24px}
+.container{max-width:960px;margin:0 auto}
+.cw{max-width:1100px;margin:0 auto}
+.slabel{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sh2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,6vw,68px);line-height:1;color:var(--white);margin-bottom:18px}
+.ssub{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--muted);max-width:560px;line-height:1.55}
+.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:15px;letter-spacing:.5px;padding:16px 34px;border-radius:4px;text-decoration:none;transition:background .25s,transform .2s}
+.cta:hover{background:var(--accentw);transform:translateY(-2px)}
+.cta-outline{display:inline-block;border:1px solid var(--border);color:var(--white);font-weight:600;font-size:14px;padding:14px 28px;border-radius:4px;text-decoration:none;transition:border-color .25s,color .25s}
+.cta-outline:hover{border-color:var(--accent);color:var(--accent)}
+footer{background:var(--off);border-top:1px solid var(--border);padding:48px 24px 40px;text-align:center}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--white);margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;gap:32px;margin:20px 0;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:12px;color:var(--muted);margin-top:16px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.phase-list{display:flex;flex-direction:column;gap:2px;max-width:800px;margin:48px auto 0}
+.pi{display:grid;grid-template-columns:72px 1fr;border:1px solid var(--border);overflow:hidden;transition:border-color .3s}
+.pi:hover{border-color:var(--accent)}
+.pnum{background:var(--charcoal);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 12px;border-right:1px solid var(--border)}
+.pnum .em{font-size:20px;margin-bottom:8px}
+.pnum .tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);text-align:center}
+.pbody{padding:24px 28px}
+.pbody h3{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:4px}
+.pbody .psub{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.pbody ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.pbody li{font-size:13px;color:var(--muted);padding-left:16px;position:relative}
+.pbody li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+.pout{font-size:12px;color:var(--white);font-weight:600;background:rgba(232,64,28,.1);border-left:3px solid var(--accent);padding:8px 12px}
+.inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:48px}
+.inc-card{border:1px solid var(--border);padding:24px 20px;position:relative;overflow:hidden;transition:border-color .25s}
+.inc-card:hover{border-color:var(--accent)}
+.inc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.inc-card:hover::before{transform:scaleX(1)}
+.inc-card .di{font-size:26px;margin-bottom:10px}
+.inc-card h3{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);margin-bottom:6px}
+.inc-card p{font-size:13px;color:var(--muted);line-height:1.65}
+@media(max-width:560px){.pi{grid-template-columns:52px 1fr}.pbody{padding:18px 16px}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8CZR335"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="page-wrap">
+<nav>
+  <a href="/index.html" class="nav-brand">Coached<span>By</span>Arpit</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/results.html">Results</a></li>
+    <li><a href="/ypt90.html">YPT90</a></li>
+    <li><a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="nav-cta">Book Free Call</a></li>
+  </ul>
+</nav>
+
+<section style="background:var(--off);padding:88px 24px 64px;text-align:center">
+  <div class="reveal">
+    <p class="slabel">The Program</p>
+    <h1 class="sh2" style="font-size:clamp(42px,7vw,80px)">Young Parents<br/>Transformation 90</h1>
+    <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(16px,2.5vw,22px);color:var(--cream);max-width:580px;margin:16px auto 36px;line-height:1.6">A 90-day body transformation system built for busy working parents 30–55. Not a diet. Not a challenge. A protocol engineered around your actual life.</p>
+    <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="cta" style="font-size:16px;padding:18px 44px">Book Free Strategy Call →</a>
+  </div>
+</section>
+
+<section style="background:var(--black)">
+  <div class="container">
+    <div class="reveal" style="text-align:center"><p class="slabel">How it works</p><h2 class="sh2">3 Phases. 90 Days.</h2></div>
+    <div class="phase-list reveal">
+      <div class="pi"><div class="pnum"><div class="em">🧭</div><div class="tag">Phase 0</div></div><div class="pbody"><h3>Baseline & Audit</h3><div class="psub">Foundation — Week 0</div><ul><li>Deep lifestyle, sleep & stress audit</li><li>Blood report analysis & hormonal baseline</li><li>Goal-setting with measurable metrics</li><li>Personalized protocol built around your schedule</li></ul><div class="pout">Outcome: You know exactly what's wrong and what to fix.</div></div></div>
+      <div class="pi"><div class="pnum"><div class="em">🔥</div><div class="tag">Phase 1</div></div><div class="pbody"><h3>Reset</h3><div class="psub">Weeks 1–4</div><ul><li>Gut repair & inflammation reduction</li><li>Blood sugar stabilization through meal timing</li><li>Energy reset without cutting the foods you love</li><li>Sleep quality upgrade using science, not supplements</li></ul><div class="pout">Outcome: Consistent energy all day. No crash. No chai dependency.</div></div></div>
+      <div class="pi"><div class="pnum"><div class="em">⚡</div><div class="tag">Phase 2</div></div><div class="pbody"><h3>Rebuild</h3><div class="psub">Weeks 5–10</div><ul><li>Targeted fat loss with preserved muscle</li><li>Hormone optimization for parents 30–55</li><li>Progressive workouts for 30–45 min windows</li><li>Cortisol & stress management protocols</li></ul><div class="pout">Outcome: 8–15 kg down. Body composition visibly changed.</div></div></div>
+      <div class="pi"><div class="pnum"><div class="em">🚀</div><div class="tag">Phase 3</div></div><div class="pbody"><h3>Own It</h3><div class="psub">Weeks 11–13</div><ul><li>Long-term maintenance system built into your routine</li><li>Social eating guide — weddings, dinners, travel</li><li>Freedom from tracking, counting, obsessing</li><li>Identity shift: health as default, not discipline</li></ul><div class="pout">Outcome: You sustain results without trying. This becomes who you are.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--off)">
+  <div class="cw">
+    <div class="reveal" style="text-align:center"><p class="slabel">What's included</p><h2 class="sh2">Everything Built For You</h2></div>
+    <div class="inc-grid reveal">
+      <div class="inc-card"><div class="di">📞</div><h3>Weekly Strategy Calls</h3><p>1-on-1 every week. Adjusted around your travel, stress, and schedule.</p></div>
+      <div class="inc-card"><div class="di">🧬</div><h3>Blood Report Analysis</h3><p>Testosterone, thyroid, insulin resistance — things your gym trainer never checks.</p></div>
+      <div class="inc-card"><div class="di">🥗</div><h3>Custom Diet Plan</h3><p>Built on Indian food and your family's meals. No boiled chicken.</p></div>
+      <div class="inc-card"><div class="di">💊</div><h3>Supplement Protocol</h3><p>Only what's proven. Referenced to your actual blood work.</p></div>
+      <div class="inc-card"><div class="di">💬</div><h3>WhatsApp Support</h3><p>Direct access. Not a group. Not an intern. Real-time support.</p></div>
+      <div class="inc-card"><div class="di">📊</div><h3>Progress Tracking</h3><p>Structured check-ins that keep you honest without added stress.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="cta" style="font-size:16px;padding:18px 44px">Book Your Free Strategy Call →</a>
+      <p style="color:var(--muted);font-size:12px;margin-top:12px">No obligation · 45 minutes · 100% confidential</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">CoachedByArpit</div>
+    <p style="font-size:13px;color:var(--muted)">@lawyerwhosquats · GQ India Health Featured</p>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/results.html">Results</a>
+      <a href="/ypt90.html">YPT90 Program</a>
+      <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank">Book Free Call</a>
+    </div>
+    <p class="footer-copy">© 2026 CoachedByArpit. All rights reserved.</p>
+  </div>
+</footer>
+</div>
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});},{threshold:.08});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
