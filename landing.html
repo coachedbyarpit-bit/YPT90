@@ -310,8 +310,12 @@ h2{
 .spot-filled{background:var(--red)}
 .spot-empty{background:rgba(255,255,255,.12)}
 .calendly-wrap{
-  background:rgba(255,255,255,.03);border:1px solid rgba(74,143,168,.2);
-  border-radius:16px;overflow:hidden;min-height:700px;
+  background:#fff;border:1px solid rgba(74,143,168,.2);
+  border-radius:16px;overflow:hidden;
+  min-height:700px;height:700px;
+}
+.calendly-inline-widget{
+  min-width:320px;height:700px !important;
 }
 
 /* ── ARPIT SECTION ───────────────────────────────────── */
@@ -753,7 +757,14 @@ Calendly.initInlineWidget({
   url: 'https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit',
   parentElement: document.getElementById('calendly-container'),
   prefill: {},
-  utm: {}
+  utm: {},
+  pageSettings: {
+    backgroundColor: 'ffffff',
+    hideEventTypeDetails: false,
+    hideLandingPageDetails: false,
+    primaryColor: '4A8FA8',
+    textColor: '1A1F2E'
+  }
 });
 
 // ── FIRE GTM EVENT WHEN CALENDLY BOOKING IS MADE ───────
