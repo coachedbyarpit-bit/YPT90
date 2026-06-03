@@ -7,7 +7,6 @@
 <!-- GTM -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
 <!-- Calendly CSS -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -312,10 +311,10 @@ h2{
 .calendly-wrap{
   background:#fff;border:1px solid rgba(74,143,168,.2);
   border-radius:16px;overflow:hidden;
-  min-height:700px;height:700px;
+  position:relative;width:100%;height:900px;
 }
-.calendly-inline-widget{
-  min-width:320px;height:700px !important;
+.calendly-wrap iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:none;
 }
 
 /* ── ARPIT SECTION ───────────────────────────────────── */
@@ -735,8 +734,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         <p style="font-size:13px;color:var(--muted);line-height:1.7">✓ Free &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Arpit personally on the call &nbsp;·&nbsp; ✓ Walk away with clarity either way</p>
       </div>
       <div class="reveal" style="transition-delay:.2s">
-        <div class="calendly-wrap" id="calendly-container">
-          <!-- Calendly inline widget -->
+        <div class="calendly-wrap">
+          <iframe src="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit?hide_gdpr_banner=1&primary_color=4A8FA8&text_color=1A1F2E&background_color=ffffff" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -750,22 +749,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
 </footer>
 
 <!-- ── SCRIPTS ────────────────────────────────────────── -->
-<script src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
-// ── EMBED CALENDLY ──────────────────────────────────────
-Calendly.initInlineWidget({
-  url: 'https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit',
-  parentElement: document.getElementById('calendly-container'),
-  prefill: {},
-  utm: {},
-  pageSettings: {
-    backgroundColor: 'ffffff',
-    hideEventTypeDetails: false,
-    hideLandingPageDetails: false,
-    primaryColor: '4A8FA8',
-    textColor: '1A1F2E'
-  }
-});
+// Calendly embedded via direct iframe
 
 // ── FIRE GTM EVENT WHEN CALENDLY BOOKING IS MADE ───────
 window.addEventListener('message', function(e) {
