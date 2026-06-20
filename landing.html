@@ -596,13 +596,16 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="divider" style="margin:0 auto"></div>
     </div>
     <div class="trans-grid" id="trans-grid">
-      <div class="trans-card reveal"><img src="trans1.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working mother · 90 days</div></div>
-      <div class="trans-card reveal"><img src="trans2.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">IT professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans1.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans2.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working mother · 90 days</div></div>
       <div class="trans-card reveal"><img src="trans3.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working mother · 90 days</div></div>
-      <div class="trans-card reveal"><img src="trans4.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Delhi professional · 90 days</div></div>
-      <div class="trans-card reveal"><img src="trans5.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working parent · 90 days</div></div>
-      <div class="trans-card reveal"><img src="trans6.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Business professional · 90 days</div></div>
-      <div class="trans-card reveal"><img src="trans7.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans4.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working mother · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans5.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans6.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans8.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans9.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans10.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
+      <div class="trans-card reveal"><img src="trans11.jpg" alt="Client transformation" loading="lazy"><div class="trans-caption">Working professional · 90 days</div></div>
     </div>
 
     <!-- TESTIMONIALS -->
@@ -949,27 +952,8 @@ var obs = new IntersectionObserver(function(entries){
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 
 // Arpit images embedded as base64
+// Transformation photos are hardcoded directly in the HTML trans-grid above
 
-// ── INJECT TRANSFORMATION PHOTOS ─────────────────────────
-// Replace these filenames with your actual uploaded photo filenames
-var transPhotos = [
-  {src:'trans1.jpg', caption:'Working mother · 90 days'},
-  {src:'trans2.jpg', caption:'IT professional · 90 days'},
-  {src:'trans3.jpg', caption:'Working mother · 90 days'},
-  {src:'trans4.jpg', caption:'Delhi professional · 90 days'},
-  {src:'trans5.jpg', caption:'Working parent · 90 days'},
-  {src:'trans6.jpg', caption:'Business professional · 90 days'},
-  {src:'trans7.jpg', caption:'Lawyer · 90 days'},
-];
-var grid = document.getElementById('trans-grid');
-transPhotos.forEach(function(p){
-  var card = document.createElement('div');
-  card.className = 'trans-card reveal';
-  card.innerHTML = '<img src="'+p.src+'" alt="Client transformation" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
-    + '<div class="trans-caption">'+p.caption+'</div>';
-  grid.appendChild(card);
-  obs.observe(card);
-});
 </script>
 
 <!-- FLOATING MOBILE CTA -->
