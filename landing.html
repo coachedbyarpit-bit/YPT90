@@ -438,10 +438,18 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
   .trans-grid{grid-template-columns:1fr 1fr}
   .about-stats{grid-template-columns:1fr 1fr}
   .sticky-timer{display:none}
+
+  /* On mobile, show the deposit card first so the CTA is
+     immediately visible without scrolling past supporting copy */
+  .booking-grid{display:flex;flex-direction:column}
+  .booking-grid > div:nth-child(2){order:1}
+  .booking-grid > div:nth-child(1){order:2;margin-top:32px}
 }
 @media(max-width:520px){
   .trans-grid{grid-template-columns:1fr}
   .numbers-row{grid-template-columns:1fr 1fr}
+  section{padding:48px 16px}
+  .hero{padding-top:90px;padding-bottom:48px}
 }
 </style>
 </head>
