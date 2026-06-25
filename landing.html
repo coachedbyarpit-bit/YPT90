@@ -305,14 +305,6 @@ h2{
 .spots-dots span{width:13px;height:13px;border-radius:50%}
 .spot-filled{background:var(--red)}
 .spot-empty{background:rgba(255,255,255,.12)}
-.calendly-wrap{
-  background:#fff;border:1px solid rgba(74,143,168,.2);
-  border-radius:16px;overflow:hidden;
-  position:relative;width:100%;height:900px;
-}
-.calendly-wrap iframe{
-  position:absolute;inset:0;width:100%;height:100%;border:none;
-}
 
 /* ── ARPIT SECTION ───────────────────────────────────── */
 .about{background:var(--dark)}
@@ -437,16 +429,6 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
 }
 .deposit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,168,67,.5)}
 .deposit-note{font-size:12px;color:var(--muted)}
-.already-paid-link{
-  display:block;width:100%;text-align:center;margin-top:16px;
-  background:none;border:none;color:var(--teal);font-size:13px;
-  text-decoration:underline;cursor:pointer;font-family:inherit;
-}
-.calendly-unlocked-note{
-  background:rgba(74,143,168,.1);border:1px solid rgba(74,143,168,.25);
-  color:var(--teal);padding:12px 18px;border-radius:8px;
-  font-size:13px;margin-bottom:14px;text-align:center;
-}
 
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media(max-width:900px){
@@ -820,8 +802,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       </div>
       <div class="reveal" style="transition-delay:.2s">
 
-        <!-- DEPOSIT GATE — shown first -->
-        <div id="deposit-gate" class="deposit-card">
+        <!-- DEPOSIT GATE — the only path forward -->
+        <div class="deposit-card">
           <div class="deposit-badge">₹49 to confirm your spot</div>
           <h3 class="deposit-title">This call isn't actually paid.</h3>
           <p class="deposit-text">
@@ -831,25 +813,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
             If we speak and it turns out we're not the right fit, you get your ₹49 back. No questions asked.
           </p>
           <div class="deposit-compare">Less than what you probably spent on chai this morning.</div>
-          <a href="https://rzp.io/rzp/ypt90audit" target="_blank" class="deposit-btn" onclick="gtmClick('deposit_pay')">
-            Pay ₹49 &amp; Unlock Booking
+          <a href="https://rzp.io/rzp/ypt90audit" target="_blank" class="deposit-btn" onclick="trackDepositClick()">
+            Pay ₹49 &amp; Get Your Booking Link
           </a>
-          <p class="deposit-note">You'll be able to pick your slot right after payment.</p>
+          <p class="deposit-note">You'll get the link to pick your slot right after payment.</p>
         </div>
-
-        <!-- CALENDLY — hidden until they confirm payment -->
-        <div id="calendly-section" style="display:none">
-          <div class="calendly-unlocked-note">
-            ✓ Got it. Pick a slot below — Arpit will see your payment confirmation before the call.
-          </div>
-          <div class="calendly-wrap">
-            <iframe src="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit?hide_gdpr_banner=1&primary_color=4A8FA8&text_color=1A1F2E&background_color=ffffff" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <button id="already-paid-btn" class="already-paid-link" onclick="unlockCalendly()">
-          Already paid? Click here to book your slot →
-        </button>
 
       </div>
     </div>
@@ -964,21 +932,9 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
 
 <!-- ── SCRIPTS ────────────────────────────────────────── -->
 <script>
-// Calendly embedded via direct iframe
-
-// ── FIRE GTM EVENT WHEN CALENDLY BOOKING IS MADE ───────
-window.addEventListener('message', function(e) {
-  if (e.data.event && e.data.event.indexOf('calendly') === 0) {
-    if (e.data.event === 'calendly.event_scheduled') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'call_booked',
-        value: 1,
-        currency: 'INR'
-      });
-    }
-  }
-});
+// Calendly booking now happens on Razorpay's redirect page after payment,
+// not embedded here. The strongest conversion signal we can track on this
+// page is the moment someone clicks through to pay the deposit.
 
 // ── SCROLL TO BOOKING ───────────────────────────────────
 function scrollToBooking() {
@@ -986,33 +942,17 @@ function scrollToBooking() {
   gtmClick('scroll_to_booking');
 }
 
-function unlockCalendly() {
-  document.getElementById('deposit-gate').style.display = 'none';
-  document.getElementById('already-paid-btn').style.display = 'none';
-  document.getElementById('calendly-section').style.display = 'block';
-  gtmClick('calendly_unlocked');
-}
-
-// ── AUTO UNLOCK AFTER RAZORPAY REDIRECT ──────────────────
-// Razorpay sends the person back here with ?paid=true after a
-// successful payment. We detect that and unlock Calendly automatically,
-// then scroll them straight to the booking section.
-(function checkPaymentReturn() {
-  var params = new URLSearchParams(window.location.search);
-  if (params.get('paid') === 'true') {
-    document.addEventListener('DOMContentLoaded', function() {
-      unlockCalendly();
-      document.getElementById('booking').scrollIntoView({behavior:'smooth', block:'start'});
-      gtmClick('auto_unlocked_after_payment');
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({event: 'deposit_paid', value: 49, currency: 'INR'});
-    });
-  }
-})();
-
 function gtmClick(location) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({event: 'booking_click', click_location: location});
+}
+
+function trackDepositClick() {
+  gtmClick('deposit_pay');
+  // This is now the strongest conversion signal on this page —
+  // someone clicking through to actually pay the ₹49 deposit.
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event: 'call_booked', value: 1, currency: 'INR'});
 }
 
 // Show mobile CTA after scrolling past hero
