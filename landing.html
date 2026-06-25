@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YPT90 – Free 30-Min Strategy Call | CoachedByArpit</title>
+<title>YPT90 — Reserve Your Strategy Call | CoachedByArpit</title>
 <!-- GTM -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
 <!-- Calendly CSS -->
@@ -403,6 +403,51 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
 .close-section p{font-size:17px;line-height:1.85;color:rgba(255,255,255,.7);max-width:680px;margin:0 auto 36px;font-weight:300}
 .close-section p strong{color:var(--white);font-weight:500}
 
+
+/* ── DEPOSIT GATE ────────────────────────────────────── */
+.deposit-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(212,168,67,.25);
+  border-radius:16px;padding:36px;text-align:center;
+}
+.deposit-badge{
+  display:inline-block;background:rgba(212,168,67,.15);color:var(--gold);
+  padding:6px 16px;border-radius:30px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;
+  margin-bottom:18px;
+}
+.deposit-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;
+  color:var(--white);margin-bottom:16px;
+}
+.deposit-text{
+  font-size:14px;line-height:1.75;color:rgba(255,255,255,.7);
+  margin-bottom:14px;text-align:left;
+}
+.deposit-compare{
+  font-size:13px;color:var(--muted);font-style:italic;margin-bottom:24px;
+}
+.deposit-btn{
+  display:block;width:100%;background:var(--gold);color:var(--navy);
+  padding:16px 24px;border-radius:8px;
+  font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.5px;
+  text-decoration:none;text-align:center;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 4px 24px rgba(212,168,67,.35);
+  margin-bottom:12px;
+}
+.deposit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,168,67,.5)}
+.deposit-note{font-size:12px;color:var(--muted)}
+.already-paid-link{
+  display:block;width:100%;text-align:center;margin-top:16px;
+  background:none;border:none;color:var(--teal);font-size:13px;
+  text-decoration:underline;cursor:pointer;font-family:inherit;
+}
+.calendly-unlocked-note{
+  background:rgba(74,143,168,.1);border:1px solid rgba(74,143,168,.25);
+  color:var(--teal);padding:12px 18px;border-radius:8px;
+  font-size:13px;margin-bottom:14px;text-align:center;
+}
+
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media(max-width:900px){
   .hero-grid,.booking-grid,.about-grid,.foryou-grid{grid-template-columns:1fr;gap:40px}
@@ -430,7 +475,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
   </div>
   <div style="display:flex;align-items:center;gap:16px">
     <div class="sticky-timer" id="countdown">10:00</div>
-    <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" class="sticky-btn" onclick="gtmClick('sticky_bar')">Book Free Call →</a>
+    <button class="sticky-btn" onclick="scrollToBooking()">Reserve My Spot →</button>
   </div>
 </div>
 
@@ -446,11 +491,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
           <strong>2000 parents later — this is the only program built around how you actually eat, sleep, and move. Not how a fitness magazine thinks you should.</strong>
         </p>
         <button class="cta" onclick="scrollToBooking()">
-          Book Your Free Strategy Call
+          Reserve Your Strategy Call
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
         <div class="cta-secondary">
-          <span>Free · 30 minutes</span>
+          <span>₹49 refundable · 30 minutes</span>
           <span>No obligation</span>
           <span>Arpit personally on the call</span>
         </div>
@@ -489,7 +534,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="pain-grid pain-grid-4">
       <div class="pain-card reveal">
         <div class="pain-num">01</div>
-        <h3>The All-or-Nothing Trap</h3>
+        <h3>The All Or Nothing Trap</h3>
         <p>You go hard for 2 weeks, work gets busy, a kid gets sick, and the whole thing falls apart. Not because you quit. Because the plan never accounted for a real week.</p>
       </div>
       <div class="pain-card reveal" style="transition-delay:.1s">
@@ -530,13 +575,13 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="method-num">02</div>
         <div class="method-icon">🍛</div>
         <h3>Nutrition Built Around Your Kitchen</h3>
-        <p>Dal, rice, roti, sabzi, curd — your normal food, restructured. Gram-level quantities. Named cooking oils. No foreign ingredients, no meal prep, no skipping family dinners.</p>
+        <p>Dal, rice, roti, sabzi, curd — your normal food, restructured. Quantities written in grams. Cooking oils named specifically. No foreign ingredients, no meal prep, no skipping family dinners.</p>
       </div>
       <div class="method-card reveal" style="transition-delay:.15s">
         <div class="method-num">03</div>
         <div class="method-icon">💪</div>
         <h3>Training That Fits Your Week</h3>
-        <p>Your training program is built around where you actually work out. Gym, home setup, or equipment-free. 3 to 4 sessions a week, 30 to 30 minutes. Progressive overload from week one so your body keeps adapting.</p>
+        <p>Your training program is built around where you actually work out. Gym, home setup, or no equipment at all. 3 to 4 sessions a week, 30 to 45 minutes each. Progressive overload from week one so your body keeps adapting.</p>
       </div>
       <div class="method-card reveal" style="transition-delay:.2s">
         <div class="method-num">04</div>
@@ -547,7 +592,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="method-card reveal" style="transition-delay:.25s">
         <div class="method-num">05</div>
         <div class="method-icon">📊</div>
-        <h3>Weekly Check-Ins and Adjustments</h3>
+        <h3>Weekly Check Ins and Adjustments</h3>
         <p>Every week you send in your numbers, your energy, what worked and what did not. Every week the plan gets adjusted. If something stops working, it gets changed within the week.</p>
       </div>
       <div class="method-card reveal" style="transition-delay:.3s">
@@ -559,10 +604,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
     </div>
     <div class="cta-center reveal">
       <button class="cta" onclick="scrollToBooking()">
-        Book Free Strategy Call
+        Reserve Your Strategy Call
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="cta-secondary"><span>Free · 30 minutes</span><span>Walk away with clarity</span></div>
+      <div class="cta-secondary"><span>₹49 refundable · 30 minutes</span><span>Walk away with clarity</span></div>
     </div>
   </div>
 </section>
@@ -649,7 +694,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         I Want This Result
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="cta-secondary"><span>Free</span><span>No commitment</span></div>
+      <div class="cta-secondary"><span>₹49 refundable</span><span>No commitment</span></div>
     </div>
   </div>
 </section>
@@ -676,7 +721,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="bonus-card reveal" style="transition-delay:.15s">
         <div class="bonus-icon">🪔</div>
         <h4>Festival Season Guide</h4>
-        <p>Diwali, Holi, family get-togethers — how to enjoy every one of them without undoing 6 weeks of progress.</p>
+        <p>Diwali, Holi, family gatherings — how to enjoy every one of them without undoing 6 weeks of progress.</p>
       </div>
       <div class="bonus-card reveal" style="transition-delay:.2s">
         <div class="bonus-icon">💍</div>
@@ -690,7 +735,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         Claim These Bonuses — Book Your Call
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="cta-secondary"><span>Free · 30 minutes</span><span>No obligation</span></div>
+      <div class="cta-secondary"><span>₹49 refundable · 30 minutes</span><span>No obligation</span></div>
     </div>
   </div>
 </section>
@@ -742,7 +787,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         Make This Real — Book Your Call
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="cta-secondary"><span>Free · 30 minutes</span><span>No obligation</span></div>
+      <div class="cta-secondary"><span>₹49 refundable · 30 minutes</span><span>No obligation</span></div>
     </div>
   </div>
 </section>
@@ -771,12 +816,41 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
           </div>
           <span>9 of 12 spots taken this month</span>
         </div>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7">✓ Free &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Arpit personally on the call &nbsp;·&nbsp; ✓ Walk away with clarity either way</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">✓ ₹49 refundable deposit &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Arpit personally on the call &nbsp;·&nbsp; ✓ Walk away with clarity either way</p>
       </div>
       <div class="reveal" style="transition-delay:.2s">
-        <div class="calendly-wrap">
-          <iframe src="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit?hide_gdpr_banner=1&primary_color=4A8FA8&text_color=1A1F2E&background_color=ffffff" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+
+        <!-- DEPOSIT GATE — shown first -->
+        <div id="deposit-gate" class="deposit-card">
+          <div class="deposit-badge">₹49 to confirm your spot</div>
+          <h3 class="deposit-title">This call isn't actually paid.</h3>
+          <p class="deposit-text">
+            We added a small refundable deposit because we kept getting calls booked by people who never showed up. ₹49 keeps this serious — for both of us.
+          </p>
+          <p class="deposit-text">
+            If we speak and it turns out we're not the right fit, you get your ₹49 back. No questions asked.
+          </p>
+          <div class="deposit-compare">Less than what you probably spent on chai this morning.</div>
+          <a href="https://rzp.io/rzp/Tgh6rgov" target="_blank" class="deposit-btn" onclick="gtmClick('deposit_pay')">
+            Pay ₹49 &amp; Unlock Booking
+          </a>
+          <p class="deposit-note">You'll be able to pick your slot right after payment.</p>
         </div>
+
+        <!-- CALENDLY — hidden until they confirm payment -->
+        <div id="calendly-section" style="display:none">
+          <div class="calendly-unlocked-note">
+            ✓ Got it. Pick a slot below — Arpit will see your payment confirmation before the call.
+          </div>
+          <div class="calendly-wrap">
+            <iframe src="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit?hide_gdpr_banner=1&primary_color=4A8FA8&text_color=1A1F2E&background_color=ffffff" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <button id="already-paid-btn" class="already-paid-link" onclick="unlockCalendly()">
+          Already paid? Click here to book your slot →
+        </button>
+
       </div>
     </div>
   </div>
@@ -800,14 +874,14 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
           <li>You want to see something real in 90 days, not a vague promise about a year from now</li>
         </ul>
         <button class="cta" onclick="scrollToBooking()">
-          Book Free Strategy Call
+          Reserve Your Strategy Call
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
       </div>
       <div class="not-box reveal" style="transition-delay:.2s">
         <h3>This is NOT for you if…</h3>
         <ul class="not-list">
-          <li>You want a quick detox or 7-day crash diet</li>
+          <li>You want a quick detox or a 7 day crash diet</li>
           <li>You are not willing to check in weekly and give honest updates</li>
           <li>You want maximum results with zero changes to how you currently live</li>
           <li>You are looking for a template plan rather than something built for your specific situation</li>
@@ -833,7 +907,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="divider"></div>
         <p class="about-body">I was a lawyer at Nirma University. At 108 kg. I transformed my own body to 70 kg, got featured in GQ India Health, and that pushed me to leave law and start coaching full time.</p>
         <p class="about-body">My mother's health later pushed me into the clinical side of things — how hormones, bloodwork, and root cause diagnosis change everything. That is what became the YPT90 method.</p>
-        <p class="about-body">I coach every client personally. No hand-offs to junior coaches. When you book a call, you get me — and I look at your situation before we speak.</p>
+        <p class="about-body">I coach every client personally. There are no junior coaches and no handing you off. When you book a call, you get me, and I look at your situation before we speak.</p>
         <div class="about-stats">
           <div class="about-stat"><div class="about-stat-val">2000+</div><div class="about-stat-label">Clients</div></div>
           <div class="about-stat"><div class="about-stat-val">7 Yrs</div><div class="about-stat-label">Coaching</div></div>
@@ -853,14 +927,14 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
   <div class="container reveal">
     <div class="g-badge">🛡️</div>
     <div class="sec-tag">Zero Risk</div>
-    <h2>30-Day Visible Progress Guarantee</h2>
+    <h2>30 Day Visible Progress Guarantee</h2>
     <div class="divider" style="margin:0 auto 24px"></div>
     <p>Follow the plan for 30 days. If you do not see visible progress in measurements, energy, or how your clothes fit — <strong>full refund. No questions. No fine print.</strong> The risk is entirely mine.</p>
     <button class="cta" onclick="scrollToBooking()">
-      Book Free Call — Zero Risk
+      Reserve Your Spot — Zero Risk
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <div class="cta-secondary" style="margin-top:12px"><span>Free · 30 minutes</span><span>No commitment required</span></div>
+    <div class="cta-secondary" style="margin-top:12px"><span>₹49 refundable · 30 minutes</span><span>No commitment required</span></div>
   </div>
 </section>
 
@@ -875,10 +949,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       <strong>You have two options.</strong> Close this tab and revisit this exact same feeling in another 6 months. Or spend 30 minutes with me this week and actually do something about it.
     </p>
     <button class="cta" onclick="scrollToBooking()">
-      Book Your Free Strategy Call
+      Reserve Your Strategy Call
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <div class="cta-secondary" style="margin-top:12px"><span>Free · 30 minutes</span><span>No obligation</span></div>
+    <div class="cta-secondary" style="margin-top:12px"><span>₹49 refundable · 30 minutes</span><span>No obligation</span></div>
   </div>
 </section>
 
@@ -910,6 +984,13 @@ window.addEventListener('message', function(e) {
 function scrollToBooking() {
   document.getElementById('booking').scrollIntoView({behavior:'smooth', block:'start'});
   gtmClick('scroll_to_booking');
+}
+
+function unlockCalendly() {
+  document.getElementById('deposit-gate').style.display = 'none';
+  document.getElementById('already-paid-btn').style.display = 'none';
+  document.getElementById('calendly-section').style.display = 'block';
+  gtmClick('calendly_unlocked');
 }
 
 function gtmClick(location) {
@@ -964,19 +1045,18 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   padding:12px 20px;
   box-shadow:0 -4px 24px rgba(0,0,0,.4);
 ">
-  <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" 
-     onclick="gtmClick('mobile_float')"
+  <button onclick="scrollToBooking()"
      style="
-       display:block;width:100%;
+       display:block;width:100%;border:none;cursor:pointer;
        background:var(--gold);color:var(--navy);
        padding:14px 24px;border-radius:6px;
        font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
        text-align:center;text-decoration:none;letter-spacing:.5px;
      ">
-    Book Free 30-Min Strategy Call →
-  </a>
+    Reserve Your Strategy Call →
+  </button>
   <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:6px">
-    ✓ Free &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Arpit personally on the call
+    ✓ ₹49 refundable &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Arpit personally on the call
   </p>
 </div>
 
