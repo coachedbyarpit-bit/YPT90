@@ -831,7 +831,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
             If we speak and it turns out we're not the right fit, you get your ₹49 back. No questions asked.
           </p>
           <div class="deposit-compare">Less than what you probably spent on chai this morning.</div>
-          <a href="https://rzp.io/rzp/Tgh6rgov" target="_blank" class="deposit-btn" onclick="gtmClick('deposit_pay')">
+          <a href="https://rzp.io/rzp/ypt90audit" target="_blank" class="deposit-btn" onclick="gtmClick('deposit_pay')">
             Pay ₹49 &amp; Unlock Booking
           </a>
           <p class="deposit-note">You'll be able to pick your slot right after payment.</p>
@@ -992,6 +992,23 @@ function unlockCalendly() {
   document.getElementById('calendly-section').style.display = 'block';
   gtmClick('calendly_unlocked');
 }
+
+// ── AUTO UNLOCK AFTER RAZORPAY REDIRECT ──────────────────
+// Razorpay sends the person back here with ?paid=true after a
+// successful payment. We detect that and unlock Calendly automatically,
+// then scroll them straight to the booking section.
+(function checkPaymentReturn() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    document.addEventListener('DOMContentLoaded', function() {
+      unlockCalendly();
+      document.getElementById('booking').scrollIntoView({behavior:'smooth', block:'start'});
+      gtmClick('auto_unlocked_after_payment');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: 'deposit_paid', value: 49, currency: 'INR'});
+    });
+  }
+})();
 
 function gtmClick(location) {
   window.dataLayer = window.dataLayer || [];
