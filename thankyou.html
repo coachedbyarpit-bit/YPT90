@@ -105,12 +105,10 @@ src="https://www.facebook.com/tr?id=919029414177451&ev=Purchase&noscript=1" /></
 
   <p class="sched-label">Choose your slot</p>
   <div class="cal-card">
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit"
-         data-resize="true"></div>
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <div id="cal" class="calendly-inline-widget"
+         data-url="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit"></div>
   </div>
-  <p class="fallback">Calendar not loading? <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" rel="noopener">Open the booking page in a new tab &rarr;</a></p>
+  <p class="fallback" id="calFallback" style="display:none">Calendar not loading? <a href="https://calendly.com/teamcoachedbyarpit/ypt90-metabolic-audit" target="_blank" rel="noopener">Open the booking page in a new tab &rarr;</a></p>
 
   <div class="panel">
     <div class="lbl">Watch before your call</div>
@@ -145,6 +143,19 @@ src="https://www.facebook.com/tr?id=919029414177451&ev=Purchase&noscript=1" /></
     var id = new URLSearchParams(location.search).get('razorpay_payment_id')
           || new URLSearchParams(location.search).get('razorpay_payment_link_id');
     if (id) document.getElementById('ref').innerHTML = 'Payment reference: <b>' + id + '</b>';
+  })();
+
+  // load the Calendly inline widget, and reveal the fallback link only if it truly fails to render
+  (function(){
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    document.head.appendChild(s);
+    setTimeout(function(){
+      var c = document.getElementById('cal');
+      var fb = document.getElementById('calFallback');
+      if (fb && (!c || !c.querySelector('iframe'))) fb.style.display = 'block';
+    }, 6000);
   })();
 
   // fire the booking conversion ONLY when Calendly confirms the slot is scheduled
