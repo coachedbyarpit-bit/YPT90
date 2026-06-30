@@ -8,7 +8,7 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M8CZR335');</script>
 <!-- End Google Tag Manager -->
 
-<!-- Meta Pixel + Purchase (fires on load = payment complete) -->
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -20,21 +20,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '919029414177451');
 fbq('track', 'PageView');
-
-// ----- PURCHASE: they have just paid on Razorpay to reach this page -----
-// SET THIS to your real audit price in INR (e.g. 499). Leave 0 only until you fill it in.
-var AUDIT_VALUE = 0;
-var RZP_ID = new URLSearchParams(location.search).get('razorpay_payment_id')
-          || new URLSearchParams(location.search).get('razorpay_payment_link_id') || null;
-var purchase = { currency: 'INR' };
-if (AUDIT_VALUE > 0) purchase.value = AUDIT_VALUE;
-fbq('track', 'Purchase', purchase, RZP_ID ? { eventID: RZP_ID } : {});
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ event: 'purchase', value: AUDIT_VALUE, currency: 'INR', razorpay_payment_id: RZP_ID });
+fbq('track', ‘Purchase’);
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=919029414177451&ev=Purchase&noscript=1" /></noscript>
-<!-- End Meta Pixel -->
+src="https://www.facebook.com/tr?id=919029414177451&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 <title>Payment received — book your audit | CoachedByArpit</title>
 <meta name="robots" content="noindex">
